@@ -5,6 +5,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   db("accounts")
     .then(accounts => {
+      // console.log(accounts);
       res.status(200).json(accounts);
     })
     .catch(error => {
