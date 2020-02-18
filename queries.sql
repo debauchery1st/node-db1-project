@@ -19,5 +19,7 @@ INSERT INTO customers (CustomerName, ContactName, Address, City, PostalCode, Cou
 UPDATE customers SET PostalCode = '11122' WHERE CustomerName = 'The Shire' and ContactName = 'Bilbo Baggins';
 
 -- (Stretch) Find a query to discover how many different cities are stored in the Customers table. Repeats should not be double counted
+SELECT count(DISTINCT city) FROM customers;
 
 -- (Stretch) Find all suppliers who have names longer than 20 characters. You can use `length(SupplierName)` to get the length of the name
+SELECT * FROM suppliers WHERE length(SupplierName) > 20
